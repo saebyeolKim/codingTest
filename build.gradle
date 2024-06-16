@@ -20,6 +20,6 @@ test {
 
 jar {
     manifest {
-        attributes 'Main-Class' : 'org.example.String.Solution5'
+        attributes 'Main-Class' : 'org.example.String.Solution6'
     }
 }
