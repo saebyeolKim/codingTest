@@ -15,3 +15,7 @@ public static void main(String[] args) {
   String input = in.next();
   System.out.println(s.solution(input));
 }
+
+#### Two Pointers algorithm
+- 정렬 O(nlogn)
+  - 자료가 60000개라면 60000*16 = 9600000
