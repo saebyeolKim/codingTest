@@ -34,6 +34,17 @@ public class Solution5 {
         return answer;
     }
 
+    public int teacher2(int n) {
+        int answer = 0, cnt = 1;
+        n--;
+        while (n > 0) {
+            cnt++;
+            n = n - cnt;
+            if (n % cnt == 0) answer++;
+        }
+        return answer;
+    }
+
     public static void main(String[] args) {
         Solution5 s = new Solution5();
         Scanner in = new Scanner(System.in);
