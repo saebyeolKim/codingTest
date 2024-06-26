@@ -7,6 +7,9 @@ public class Solution1 {
         for(char x : str.toCharArray()) {
             map.put(x, map.getOrDefault(x, 0) + 1);
         }
+        System.out.println(map.containsKey('A')); //true or false
+        System.out.println(map.size()); //key 의 개수
+        System.out.println(map.remove('A')); //A key 삭제
         int max = 0;
         for (char key : map.keySet()) {
             if (map.get(key) > max) {
