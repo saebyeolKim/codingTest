@@ -20,6 +20,6 @@ test {
 
 jar {
     manifest {
-        attributes 'Main-Class' : 'org.example.HashMapTreeSet.Solution4'
+        attributes 'Main-Class' : 'org.example.HashMapTreeSet.Solution5'
     }
 }
