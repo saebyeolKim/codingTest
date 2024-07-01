@@ -20,6 +20,6 @@ test {
 
 jar {
     manifest {
-        attributes 'Main-Class' : 'org.example.StackQueue.Solution3'
+        attributes 'Main-Class' : 'org.example.StackQueue.Solution4'
     }
 }
