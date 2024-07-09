@@ -20,6 +20,6 @@ test {
 
 jar {
     manifest {
-        attributes 'Main-Class' : 'org.example.RecursiveTreeGraph.Solution2'
+        attributes 'Main-Class' : 'org.example.RecursiveTreeGraph.Solution3'
     }
 }
