@@ -21,3 +21,7 @@ public static void main(String[] args) {
   - 자료가 60000개라면 60000*16 = 9600000
  
 #### 시간복잡도 계산하는 법
+
+
+###### # 2024-07-11 <br>
+:pushpin: DFS 스텍프레임 그려보기
