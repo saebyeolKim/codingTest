@@ -24,4 +24,5 @@ public static void main(String[] args) {
 
 
 ###### # 2024-07-11 <br>
-:pushpin: DFS 스텍프레임 그려보기
+:pushpin: DFS 스텍프레임 그려보기 (깊이우선)
+:pushpin: BFS 스텍프레임 그려보기 (넓이우선)
