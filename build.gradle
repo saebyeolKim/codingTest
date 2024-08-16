@@ -20,6 +20,6 @@ test {
 
 jar {
     manifest {
-        attributes 'Main-Class' : 'org.example.RecursiveTreeGraph.Solution14'
+        attributes 'Main-Class' : 'org.example.DFSBFS.Solution1'
     }
 }
