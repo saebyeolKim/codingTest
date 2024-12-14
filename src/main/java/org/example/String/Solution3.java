@@ -47,10 +47,26 @@ public class Solution3 {
         return answer;
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         Scanner in = new Scanner(System.in);
         String input1 = in.nextLine();
         Solution3 s = new Solution3();
         System.out.println(s.correct(input1));
+    }
+
+    //2024-12-14
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        String[] sentence = in.nextLine().split(" ");
+        int n = 0;
+        String answer = "";
+        for (String s : sentence) {
+            if (s.length() > n) {
+                answer = s;
+                n = s.length();
+            }
+        }
+        System.out.println(answer);
+        return ;
     }
 }
