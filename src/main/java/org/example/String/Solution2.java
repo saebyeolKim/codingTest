@@ -33,10 +33,23 @@ public class Solution2 {
         return answer;
     }
 
-    public static void main(String[] args){
+    public static void main1(String[] args){
         Scanner in = new Scanner(System.in);
         String input1 = in.next();
         Solution2 s = new Solution2();
         System.out.println(s.correct2(input1));
+    }
+
+    //2024-12-14
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        String result = "";
+        char[] sentence = in.next().toCharArray();
+        for (char c : sentence) {
+            if (c - 0 < 97) result += (char)(c + 32);
+            else result += (char)(c - 32);
+        }
+        System.out.println(result);
+        return ;
     }
 }
