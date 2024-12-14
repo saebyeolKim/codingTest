@@ -32,4 +32,16 @@ public class Solution1 {
         }
         return answer;
     }
+
+    //2024-12-14
+    public static void main(String[] args){
+        Scanner in= new Scanner(System.in);
+        String[] sentence = in.next().toUpperCase().split("");
+        String c = in.next().toUpperCase();
+        int result = 0;
+        for (String s : sentence) {
+            if (c.equals(s)) result++;
+        }
+        System.out.println(result);
+    }
 }
