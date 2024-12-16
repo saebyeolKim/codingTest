@@ -52,7 +52,7 @@ public class Solution4 {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         Solution4 s = new Solution4();
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
@@ -63,5 +63,16 @@ public class Solution4 {
         for (String x : s.correct2(n, str)) {
             System.out.println(x);
         }
+    }
+
+    //2024-12-16
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        for (int i = 0; i < n; i++) {
+            String s = in.next();
+            System.out.println(new StringBuilder(s).reverse());
+        }
+        return ;
     }
 }
