@@ -62,6 +62,30 @@ public class Solution5 {
         Scanner in = new Scanner(System.in);
         String input1 = in.next();
         Solution5 s = new Solution5();
-        System.out.println(s.solution2(input1));
+        System.out.println(s.review1(input1));
+    }
+
+    public String review1(String s) {
+        char[] arr = s.toCharArray();
+        int lt = 0;
+        int rt = arr.length - 1;
+        while (lt < rt) {
+            if (!isCharacter(arr[lt]))
+                lt++;
+            else if (!isCharacter(arr[rt]))
+                rt--;
+            else {
+                char tmp = arr[lt];
+                arr[lt] = arr[rt];
+                arr[rt] = tmp;
+                lt++;
+                rt--;
+            }
+        }
+        return String.valueOf(arr);
+    }
+
+    public boolean isCharacter(char c) {
+        return (c >= 97 && c <= 122) || (c >= 65 && c <= 90);
     }
 }
