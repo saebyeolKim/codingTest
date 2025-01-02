@@ -25,6 +25,15 @@ public class Solution6 {
         Solution6 s = new Solution6();
         Scanner in = new Scanner(System.in);
         String input = in.next();
-        System.out.println(s.correct(input));
+        System.out.println(s.review1(input));
+    }
+
+    public String review1(String s) {
+        char[] arr = s.toCharArray();
+        String answer = String.valueOf(arr[0]);
+        for (char c : arr) {
+            if (!answer.contains(String.valueOf(c))) answer += String.valueOf(c);
+        }
+        return answer;
     }
 }
