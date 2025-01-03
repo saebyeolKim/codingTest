@@ -28,6 +28,15 @@ public class Solution8 {
         Solution8 s = new Solution8();
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
-        System.out.println(s.solution(input));
+        System.out.println(s.review1(input));
+    }
+
+    public String review1(String str) {
+        String answer = "YES";
+        str = str.toUpperCase();
+        str = str.replaceAll("[^A-Z]", "");
+        String reverseStr = new StringBuilder(str).reverse().toString().toUpperCase();
+        if (!str.equals(reverseStr)) return "NO";
+        return answer;
     }
 }
