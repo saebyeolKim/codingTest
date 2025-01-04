@@ -36,6 +36,10 @@ public class Solution9 {
         Solution9 s = new Solution9();
         Scanner in = new Scanner(System.in);
         String input = in.next();
-        System.out.println(s.solution2(input));
+        System.out.println(s.review1(input));
+    }
+
+    public int review1(String str) {
+        return Integer.parseInt(str.toUpperCase().replaceAll("[^0-9]", ""));
     }
 }
