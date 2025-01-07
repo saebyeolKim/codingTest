@@ -48,8 +48,29 @@ public class Solution10 {
         Scanner in = new Scanner(System.in);
         String input1 = in.next();
         char input2 = in.next().charAt(0);
-        for (int x : s.teacher(input1, input2)) {
+        for (int x : s.review1(input1, input2)) {
             System.out.print(x + " ");
         }
+    }
+
+    public int[] review1(String str, char c) {
+        int[] answer = new int[str.length()];
+        char[] arr = str.toCharArray();
+        int index = 1000; //큰 수를 설정해줘야 앞, 뒤 인덱스에서 오류가 안남
+        for (int i = 0; i < str.length(); i++) {
+            if (arr[i] != c) index++;
+            else index = 0;
+            answer[i] = index;
+        }
+        index = 1000;
+        for (int i = str.length() - 1; i >= 0; i--) {
+            if (arr[i] == c) index = 0;
+            else {
+                index++;
+                answer[i] = Math.min(answer[i], index);
+            }
+        }
+
+        return answer;
     }
 }
