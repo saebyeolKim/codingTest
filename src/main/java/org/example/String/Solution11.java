@@ -36,6 +36,22 @@ public class Solution11 {
         Solution11 s = new Solution11();
         Scanner in = new Scanner(System.in);
         String input = in.next();
-        System.out.println(s.teacher(input));
+        System.out.println(s.review1(input));
+    }
+
+    public String review1(String str){
+        String answer = "";
+        int index = 1;
+        for (int i = 1; i < str.length(); i++) {
+            if (str.charAt(i - 1) == str.charAt(i)) index++;
+            else {
+                if (index > 1) answer += str.charAt(i - 1) + "" +index;
+                else answer += str.charAt(i - 1);
+                index = 1;
+            }
+        }
+        if (index > 1) answer += str.charAt(str.length() - 1) + "" +index;
+        else answer += str.charAt(str.length() - 1) + "";
+        return answer;
     }
 }
