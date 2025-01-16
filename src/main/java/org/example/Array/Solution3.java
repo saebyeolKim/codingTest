@@ -26,7 +26,7 @@ public class Solution3 {
         return answer;
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         Solution3 s = new Solution3();
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
@@ -70,5 +70,32 @@ public class Solution3 {
         for (char x : s.teacher(n, a, b).toCharArray()) {
             System.out.println(x);
         }
+    }
+
+    public static void main(String[] args) {
+        Solution3 s = new Solution3();
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] a = new int[n];
+        int[] b = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = in.nextInt();
+        }
+        for (int i = 0; i < n; i++) {
+            b[i] = in.nextInt();
+        }
+        for (char x : s.review1(n, a, b)) {
+            System.out.println(x);
+        }
+    }
+
+    public char[] review1(int n, int[] a, int[] b) {
+        char[] answer = new char[n];
+        for (int i = 0; i < n; i++) {
+            if ((a[i] == 1 && b[i] == 2) || (a[i] == 2 && b[i] == 3) || (a[i] == 3 && b[i] == 1)) answer[i] = 'B';
+            else if (a[i] == b[i]) answer[i] = 'D';
+            else answer[i] = 'A';
+        }
+        return answer;
     }
 }
