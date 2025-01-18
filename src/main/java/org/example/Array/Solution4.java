@@ -36,8 +36,18 @@ public class Solution4 {
         Solution4 s = new Solution4();
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        for (int x : s.solution(n)) {
+        for (int x : s.review1(n)) {
             System.out.print(x + " ");
         }
+    }
+
+    public int[] review1(int n) {
+        int[] answer = new int[n];
+        answer[0] = 1;
+        answer[1] = 1;
+        for (int i = 2;  i < n; i++) {
+            answer[i] = answer[i - 1] + answer[i - 2];
+        }
+        return answer;
     }
 }
