@@ -31,6 +31,21 @@ public class Solution5 {
         Solution5 s = new Solution5();
         Scanner in = new Scanner(System.in);
         int input = in.nextInt();
-        System.out.println(s.solution(input));
+        System.out.println(s.review1(input));
+    }
+
+    public int review1(int n) {
+        int answer = 0;
+        // 14, 1 2 7 14 약수로 바꿔서 list 안에 값이 1이면 answer++
+        //타임아웃 다시 보기
+        while(n > 0) {
+            List<Integer> list = new ArrayList<>();
+            for (int i = 1; i <= n / 2; i++) {
+                if (n % i == 0) list.add(i);
+            }
+            if (list.size() == 1) answer++;
+            n--;
+        }
+        return answer;
     }
 }
