@@ -30,6 +30,23 @@ public class Solution6 {
         System.out.println(s.solution(n, arr));
     }
 
+    public String review1(int n, int[] arr) {
+        String answer = "";
+        for (int a : arr) {
+            StringBuilder sb = new StringBuilder(a + "").reverse();
+            int tmp = Integer.parseInt(sb.toString());
+            int num = 0;
+            for (int i = 2; i < tmp / 2; i++) {
+                if (tmp % i == 0) {
+                    num++;
+                    break;
+                }
+            }
+            if (tmp != 1 && num == 0) answer += tmp + " ";
+        }
+        return answer;
+    }
+
     public boolean isPrime(int num) {
         if (num == 1) return false;
         for (int i = 2; i < num; i++) {
