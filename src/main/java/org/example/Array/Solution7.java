@@ -33,6 +33,17 @@ public class Solution7 {
         for (int i = 0; i < n; i++) {
             arr[i] = in.nextInt();
         }
-        System.out.println(s.solution(n, arr));
+        System.out.println(s.review1(n, arr));
+    }
+
+    public int review1(int n, int[] arr) {
+        int answer = 0;
+        int score = 0;
+        for (int a : arr) {
+            if (a == 1) score++;
+            else score = 0;
+            answer += score;
+        }
+        return answer;
     }
 }
