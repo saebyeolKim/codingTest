@@ -31,8 +31,19 @@ public class Solution8 {
         for (int i = 0; i < n; i++) {
             arr[i] = in.nextInt();
         }
-        for (int x : s.solution(n, arr)) {
+        for (int x : s.review1(n, arr)) {
             System.out.print((x + 1) + " ");
         }
+    }
+
+    public int[] review1(int n, int[] arr) {
+        int[] answer = new int[n];
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i; j < n; j++) {
+                if (arr[i] < arr[j]) answer[i]++;
+                else if (arr[i] > arr[j]) answer[j]++;
+            }
+        }
+        return answer;
     }
 }
