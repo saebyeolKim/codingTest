@@ -59,7 +59,31 @@ public class Solution9 {
                 arr[i][j] = in.nextInt();
             }
         }
-        System.out.println(s.teacher(n, arr));
+        System.out.println(s.review1(n, arr));
+    }
+
+    public int review1(int n, int[][] arr) {
+        int max = 0;
+        int sum1, sum2;
+        //행과 열
+        for (int i = 0; i < n; i++) {
+            sum1 = sum2 = 0;
+            for (int j = 0; j < n; j++) {
+                sum1 += arr[i][j];
+                sum2 += arr[j][i];
+            }
+            max = Math.max(sum1, max);
+            max = Math.max(sum2, max);
+        }
+        //대각선
+        sum1 = sum2 = 0;
+        for (int i = 0; i < n; i++) {
+            sum1 += arr[i][i];
+            sum2 += arr[n - 1 - i][i];
+            max = Math.max(sum1, max);
+            max = Math.max(sum2, max);
+        }
+        return max;
     }
 
     public int teacher(int n, int[][]arr) {
