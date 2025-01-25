@@ -21,7 +21,26 @@ public class Solution10 {
                 arr[i][j] = in.nextInt();
             }
         }
-        System.out.println(s.solution(n, arr));
+        System.out.println(s.review1(n, arr));
+    }
+
+    public int review1(int n, int[][] arr) {
+        int answer = 0;
+        for (int i = 1; i < n + 1; i++) {
+            for(int j = 1; j < n + 1; j++) {
+                int a = arr[i][j]; //(2,1)
+                //상
+                int up = arr[i][j - 1]; //(2,0)
+                //하
+                int down = arr[i][j + 1]; //(2,2)
+                //좌
+                int left = arr[i - 1][j]; //(1,1)
+                //우
+                int right = arr[i + 1][j]; //(3,1)
+                if (a > up && a > down && a > left && a > right) answer++;
+            }
+        }
+        return answer;
     }
 
     int[] dx = {-1, 0, 1, 0};
