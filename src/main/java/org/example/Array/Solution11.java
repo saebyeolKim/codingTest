@@ -32,7 +32,31 @@ public class Solution11 {
                 arr[i][j] = in.nextInt();
             }
         }
-        System.out.println(s.solution(n, arr));
+        System.out.println(s.review1(n, arr));
+    }
+
+    public int review1(int n, int[][] arr) {
+        int answer = 0;
+        int[] tmp = new int[n];
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                for (int k = 1; k < n; k++) {
+                    System.out.println(arr[i][j] + " " + arr[k][j]);
+                    if (arr[i][j] == arr[k][j]) {
+                        tmp[i]++;
+                    }
+                }
+            }
+        }
+        for (int t : tmp) {
+            System.out.println(t);
+        }
+        //0,0 -> 1,0 / 2,0 / 3,0 / 4,0
+        //0,1 -> 1,1 / 2,1 / 3,1 / 4,1
+        //0,2 -> 1,2 / 2,2 / 3,2 / 4,2
+
+        //1,0 -> 1, / 0,2 / 0,3 / 0,4
+        return answer;
     }
 
     public int teacher(int n, int[][]arr) {
