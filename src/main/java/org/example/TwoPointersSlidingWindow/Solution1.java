@@ -39,8 +39,17 @@ public class Solution1 {
         for (int i = 0; i < m; i++) {
             arr2[i] = in.nextInt();
         }
-        for (int x : s.teacher(n, arr1, m, arr2)) {
+        for (int x : s.review1(n, arr1, m, arr2)) {
             System.out.print(x + " ");
         }
+    }
+
+    public int[] review1(int n, int[] arr1, int m, int[] arr2) {
+        int[] answer = new int[n + m];
+        int index = 0;
+        for (int a1 : arr1) answer[index++] = a1;
+        for (int a2 : arr2) answer[index++] = a2;
+        Arrays.sort(answer);
+        return answer;
     }
 }
