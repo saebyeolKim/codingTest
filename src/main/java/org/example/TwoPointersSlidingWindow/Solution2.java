@@ -45,8 +45,27 @@ public class Solution2 {
         for (int i = 0; i < m; i++) {
             b[i] = in.nextInt();
         }
-        for (int x : s.teacher(n, a, m, b)) {
+        for (int x : s.review1(n, a, m, b)) {
             System.out.print(x + " ");
         }
+    }
+
+    public ArrayList<Integer> review1(int n, int[] arr1, int m, int[] arr2) {
+        ArrayList<Integer> answer = new ArrayList<>();
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        // 1 2 3 5 9
+        // 2 3 5 7 8
+        int p1 = 0, p2 = 0;
+        while(p1 < n && p2 < m) {
+            if (arr1[p1] < arr2[p2]) p1++;
+            else if (arr1[p1] > arr2[p2]) p2++;
+            else if (arr1[p1] == arr2[p2]) {
+                answer.add(arr1[p1]);
+                p1++;
+                p2++;
+            }
+        }
+        return answer;
     }
 }
