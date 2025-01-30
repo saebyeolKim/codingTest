@@ -36,4 +36,21 @@ public class Solution3 {
         }
         System.out.println(s.solution2(n, k, arr));
     }
+
+    //마지막 문제 TIME LIMIT
+    public int review1(int n, int m, int[] arr) {
+        int answer = 0;
+        int p1 = 0;
+        int p2 = m;
+        for (int i = 1; i <= n - m; i++) {
+            int max = 0;
+            while (p1 < p2) {
+                max += arr[p1++];
+            }
+            p1 = i;
+            p2 = i + m;
+            answer = Math.max(max, answer);
+        }
+        return answer;
+    }
 }
