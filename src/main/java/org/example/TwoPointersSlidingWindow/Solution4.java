@@ -39,6 +39,20 @@ public class Solution4 {
         for (int i = 0; i < n; i++) {
             arr[i] = in.nextInt();
         }
-        System.out.println(s.solution(n, m, arr));
+        System.out.println(s.review1(n, m, arr));
+    }
+
+    //첫문제 제외 모든 문제에서 오답이기 때문에 선생님 답안 이해
+    public int review1(int n, int m, int[] arr) {
+        int answer = 0, lt = 0, sum = 0;
+        for (int rt = 0; rt < n; rt++) {
+            sum += arr[rt];
+            if (sum == m) answer++;
+            while (sum >= m) {
+                sum -= arr[lt++];
+                if (sum == m) answer++;
+            }
+        }
+        return answer;
     }
 }
