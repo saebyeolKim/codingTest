@@ -49,6 +49,18 @@ public class Solution5 {
         Solution5 s = new Solution5();
         Scanner in = new Scanner(System.in);
         int input = in.nextInt();
-        System.out.println(s.solution(input));
+        System.out.println(s.review1(input));
+    }
+
+    public int review1(int n) {
+        int answer = 0, lt = 1, sum = 0;
+        for (int rt = 1; rt < n; rt++) {
+            sum += rt;
+            while (sum >= n) {
+                if (sum == n) answer++;
+                sum -= lt++;
+            }
+        }
+        return answer;
     }
 }
