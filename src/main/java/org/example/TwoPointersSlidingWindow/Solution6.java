@@ -38,6 +38,18 @@ public class Solution6 {
         for (int i = 0; i < n; i++) {
             arr[i] = in.nextInt();
         }
-        System.out.println(s.teacher(n, k, arr));
+        System.out.println(s.review1(n, k, arr));
+    }
+
+    public int review1(int n, int k , int[] arr) {
+        int answer = 0, lt = 0, zero = 0;
+        for (int rt = 0; rt < n; rt++) {
+            if (arr[rt] == 0) zero++;
+            answer = Math.max(answer, rt - lt);
+            while (zero > k) {
+                if (arr[lt++] == 0) zero--;
+            }
+        }
+        return answer;
     }
 }
