@@ -25,6 +25,20 @@ public class Solution1 {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         String str = in.next();
-        System.out.println(s.solution(n, str));
+        System.out.println(s.review1(n, str));
+    }
+
+    public String review1(int n, String str) {
+       String answer = "";
+       Map<Character, Integer> map = new HashMap<>();
+       for (char c : str.toCharArray()) map.put(c, map.getOrDefault(c, 0) + 1);
+       int max = 0;
+       for (char h : map.keySet()) {
+           if (max < map.get(h)) {
+               max = map.get(h);
+               answer = h + "";
+           }
+       }
+       return answer;
     }
 }
