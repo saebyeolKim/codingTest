@@ -54,4 +54,16 @@ public class Solution3 {
             System.out.print(x + " ");
         }
     }
+    public List<Integer> review1(int n, int k, int[] arr) {
+        List<Integer> answer = new ArrayList<>();
+        //Time Limited
+        for (int lt = 0; lt <= n - k; lt++) {
+            Set<Integer> tmp = new HashSet<>();
+            for (int rt = lt; rt < lt + k; rt++) {
+                tmp.add(arr[rt]);
+            }
+            answer.add(tmp.size());
+        }
+        return answer;
+    }
 }
