@@ -24,6 +24,24 @@ public class Solution4 {
         Scanner in = new Scanner(System.in);
         String s = in.next();
         String t = in.next();
-        System.out.println(main.solution(s, t));
+        System.out.println(main.review1(s, t));
+    }
+
+    public int review1(String s, String t) {
+        int answer = 0;
+        Map<Character, Integer> map1 = new HashMap<>();
+        Map<Character, Integer> map2 = new HashMap<>();
+        int tLen = t.length();
+        for (int i = 0; i < tLen; i++) map1.put(t.charAt(i), map1.getOrDefault(t.charAt(i), 0) + 1);
+        for (int i = 0; i < tLen - 1; i++) map2.put(s.charAt(i), map2.getOrDefault(s.charAt(i), 0) + 1);
+        int lt = 0;
+        for (int rt = tLen - 1; rt < s.length(); rt++) {
+            map2.put(s.charAt(rt), map2.getOrDefault(s.charAt(rt), 0) + 1);
+            if (map1.equals(map2)) answer++;
+            map2.put(s.charAt(lt), map2.get(s.charAt(lt)) - 1);
+            if (map2.get(s.charAt(lt)) == 0) map2.remove(s.charAt(lt));
+            lt++;
+        }
+        return answer;
     }
 }
