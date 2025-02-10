@@ -1,4 +1,6 @@
 package org.example.HashMapTreeSet;
+import com.sun.source.tree.Tree;
+
 import java.util.*;
 public class Solution5 {
     public int solution(int n, int k, int[] arr) {
@@ -33,6 +35,25 @@ public class Solution5 {
         for (int i = 0; i < n; i++) {
             arr[i] = in.nextInt();
         }
-        System.out.println(s.solution(n, k , arr));
+        System.out.println(s.review1(n, k , arr));
+    }
+
+    public int review1(int n, int k, int[] arr) {
+        int answer = 0;
+        TreeSet<Integer> tSet = new TreeSet<>(Collections.reverseOrder());
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                for (int l = j + 1; l < n; l++) {
+                    tSet.add(arr[i] + arr[j] + arr[l]);
+                }
+            }
+        }
+        if (tSet.size() < k) return -1;
+        int index = 0;
+        for (int t : tSet) {
+            index++;
+            if (index == k) return t;
+        }
+        return answer;
     }
 }
