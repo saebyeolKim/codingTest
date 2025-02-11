@@ -30,6 +30,17 @@ public class Solution1 {
         Solution1 s = new Solution1();
         Scanner in = new Scanner(System.in);
         String input = in.next();
-        System.out.println(s.solution(input));
+        System.out.println(s.review1(input));
+    }
+
+    public String review1(String s) {
+        if (s.charAt(0) == ')') return "NO";
+        Stack<Character> stack = new Stack<>();
+        stack.add(s.charAt(0));
+        for (int i = 1; i < s.length(); i++) {
+            if (!stack.isEmpty() && stack.peek() == '(' && s.charAt(i) == ')') stack.pop();
+            else stack.add(s.charAt(i));
+        }
+        return stack.size() > 0 ? "NO" : "YES";
     }
 }
