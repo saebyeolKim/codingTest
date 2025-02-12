@@ -30,6 +30,19 @@ public class Solution2 {
         Solution2 s = new Solution2();
         Scanner in = new Scanner(System.in);
         String input = in.next();
-        System.out.println(s.teacher(input));
+        System.out.println(s.review1(input));
+    }
+
+    public String review1(String s) {
+        String answer = "";
+        if (s.charAt(0) == ')') return answer;
+        Stack<Character> st = new Stack<>();
+        st.add(s.charAt(0));
+        for (int i = 1; i < s.length(); i++) {
+            if (!st.isEmpty() && s.charAt(i) == ')') while(st.pop() != '(');
+            else st.add(s.charAt(i));
+        }
+        for (char c : st) answer += c;
+        return answer;
     }
 }
