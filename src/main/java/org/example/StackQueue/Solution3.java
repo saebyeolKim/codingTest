@@ -55,6 +55,26 @@ public class Solution3 {
         for (int i = 0; i < m; i++) {
             moves[i] = in.nextInt();
         }
-        System.out.println(s.teacher(n, board, m, moves));
+        System.out.println(s.review1(n, board, m, moves));
+    }
+
+    public int review1(int n, int[][] board, int m, int[] moves) {
+        int answer = 0;
+        Stack<Integer> st = new Stack<>();
+        // 4 3 1 1 3 2 4
+        for (int i = 0; i < m; i++) {
+            int x = moves[i] - 1;
+            for (int j = 0; j < n; j++) {
+                if (board[j][x] != 0) {
+                    if (!st.isEmpty() && st.peek() == board[j][x]) {
+                        st.pop();
+                        answer += 2;
+                    } else st.add(board[j][x]);
+                    board[j][x] = 0;
+                    break;
+                }
+            }
+        }
+        return answer;
     }
 }
