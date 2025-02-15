@@ -40,6 +40,20 @@ public class Solution5 {
         Solution5 s = new Solution5();
         Scanner in = new Scanner(System.in);
         String input = in.next();
-        System.out.println(s.solution(input));
+        System.out.println(s.review1(input));
+    }
+
+    public int review1(String s) {
+        int answer = 0;
+        Stack<Character> st = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') st.add('(');
+            else {
+                st.pop();
+                if (s.charAt(i - 1) == '(') answer += st.size();
+                else answer++;
+            }
+        }
+        return answer;
     }
 }
