@@ -29,4 +29,17 @@ public class Solution7 {
         String plan = in.next();
         System.out.println(s.solution(order, plan));
     }
+
+    public String review1(String order, String plan) {
+        String answer = "YES";
+        Queue<Character> q = new LinkedList<>();
+        for (char x : order.toCharArray()) q.offer(x);
+        for (char x : plan.toCharArray()) {
+            if (q.contains(x)) {
+                if (x != q.poll()) return "NO";
+            }
+        }
+        if (!q.isEmpty()) return "NO";
+        return answer;
+    }
 }
