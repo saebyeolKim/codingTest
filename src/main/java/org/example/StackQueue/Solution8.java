@@ -69,6 +69,28 @@ public class Solution8 {
         for (int i = 0; i < n; i++) {
             arr[i] = in.nextInt();
         }
-        System.out.println(s.solution(n, m, arr));
+        System.out.println(s.review1(n, m, arr));
+    }
+
+    public int review1(int n, int m, int[] arr) {
+        int answer = 0;
+        //4
+        //70 60 90 60 60 60
+        //60 90 60 60 60 70
+        //90 60 60 60 70 60
+        //60 60 60 70 60
+        //60 60 70 60 60
+        //60 70 60 60 60
+        //70 60 60 60 60
+        //60 60 60 60
+        Queue<Integer> Q = new LinkedList<>();
+        for (int a : arr) Q.offer(a);
+        System.out.println(Q);
+        while(!Q.isEmpty()) {
+            for (int a : arr) {
+                if (a > Q.poll()) Q.offer(a);
+            }
+        }
+        return answer;
     }
 }
