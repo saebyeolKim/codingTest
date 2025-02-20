@@ -41,8 +41,21 @@ public class Solution1 {
         for (int i = 0; i < n; i++) {
             arr[i] = in.nextInt();
         }
-        for (int x : s.teacher(n, arr)) {
+        for (int x : s.review1(n, arr)) {
             System.out.print(x + " ");
         }
+    }
+
+    public int[] review1(int n, int[] arr) {
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                if (arr[i] > arr[j]) {
+                    int tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
+                }
+            }
+        }
+        return arr;
     }
 }
