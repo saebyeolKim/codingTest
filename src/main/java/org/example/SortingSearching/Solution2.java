@@ -31,4 +31,22 @@ public class Solution2 {
             System.out.print(x + " ");
         }
     }
+
+    //1 2 3 4 5
+    //arr[0] arr[1]
+    //arr[1] arr[2]
+    //arr[2] arr[3]
+    //arr[3] arr[4]
+    public int[] review1(int n, int[] arr) {
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+                }
+            }
+        }
+        return arr;
+    }
 }
