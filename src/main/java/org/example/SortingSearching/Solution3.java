@@ -26,4 +26,17 @@ public class Solution3 {
             System.out.print(x + " ");
         }
     }
+
+    public int[] review1(int n, int[] arr) {
+        for (int i = 1; i < n; i++) {
+            int tmp = arr[i];
+            for (int j = i - 1; j >= 0; j++) {
+                if (arr[j] > tmp) {
+                    arr[j + 1] = arr[i];
+                    arr[j] = tmp;
+                } else break;
+            }
+        }
+        return arr;
+    }
 }
