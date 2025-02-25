@@ -46,8 +46,23 @@ public class Solution4 {
         for (int i = 0; i < n; i++) {
             arr[i] = in.nextInt();
         }
-        for (int x : T.teacher(s, n , arr)) {
+        for (int x : T.review1(s, n , arr)) {
             System.out.print(x + " ");
         }
+    }
+
+    public ArrayList<Integer> review1(int s, int n, int[] arr) {
+        ArrayList<Integer> answer = new ArrayList<>();
+        answer.add(arr[0]);
+        for (int i = 0; i < n; i++) {
+            if (answer.contains(arr[i])) {
+                answer.remove(answer.indexOf(arr[i]));
+                answer.add(0, arr[i]);
+            } else {
+                answer.add(0, arr[i]);
+                if (answer.size() > s) answer.remove(s);
+            }
+        }
+        return answer;
     }
 }
