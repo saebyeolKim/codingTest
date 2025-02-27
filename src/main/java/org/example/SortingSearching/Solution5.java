@@ -28,6 +28,16 @@ public class Solution5 {
         for (int i = 0; i < n; i++) {
             arr[i] = in.nextInt();
         }
-        System.out.println(s.solution(n, arr));
+        System.out.println(s.review1(n, arr));
+    }
+
+    public Character review1(int n, int[] arr) {
+        char answer = 'U';
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (arr[i] == arr[j]) return 'D';
+            }
+        }
+        return answer;
     }
 }
