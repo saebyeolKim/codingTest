@@ -34,6 +34,17 @@ public class Solution6 {
         for (int i = 0; i < n; i++) {
             arr[i] = in.nextInt();
         }
-        System.out.println(s.solution(n, arr));
+        System.out.println(s.review1(n, arr));
+    }
+
+    public String review1(int n, int[] arr) {
+        String answer = "";
+        int[] tmp = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) tmp[i] = arr[i];
+        Arrays.sort(arr);
+        for (int i = 0; i < arr.length; i++) {
+            if (tmp[i] != arr[i]) answer += (i + 1) + " ";
+        }
+        return answer;
     }
 }
