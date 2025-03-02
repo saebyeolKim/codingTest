@@ -54,7 +54,7 @@ public class Solution7 {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
         Solution7 s = new Solution7();
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
@@ -67,6 +67,36 @@ public class Solution7 {
         Collections.sort(arr);
         for (Point o : arr) {
             System.out.println(o.x + " " + o.y);
+        }
+    }
+
+    public static void main(String[] args) {
+        Solution7 s = new Solution7();
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[][] arr = new int[2][5];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < 2; j++) {
+                arr[j][i] = in.nextInt();
+            }
+        }
+        review1(n, arr);
+    }
+
+    public static void review1(int n, int[][] arr) {
+        int[] x = new int[n];
+        int[] y = new int[n];
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == 0) x[j] = arr[i][j];
+                else y[j] = arr[i][j];
+            }
+        }
+        Arrays.sort(x);
+        Arrays.sort(y);
+        for (int i = 0; i < n; i++) {
+            System.out.print(x[i] + " " + y[i]);
+            if (i < n - 1) System.out.println();
         }
     }
 }
