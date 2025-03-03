@@ -36,6 +36,15 @@ public class Solution8 {
         for (int i = 0 ; i < n; i++) {
             arr[i] = in.nextInt();
         }
-        System.out.println(s.solution(n, m, arr));
+        System.out.println(s.review1(n, m, arr));
+    }
+
+    public int review1(int n, int m, int[] arr) {
+        int answer = 0;
+        Arrays.sort(arr);
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == m) return i + 1;
+        }
+        return answer;
     }
 }
