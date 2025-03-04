@@ -41,4 +41,11 @@ public class Solution9 {
         }
         System.out.println(s.solution(n, m, arr));
     }
+
+    public int review1(int n, int m, int[] arr) {
+        int answer = 0;
+        Arrays.sort(arr);
+//        for (int i = 0; )
+        return answer;
+    }
 }
