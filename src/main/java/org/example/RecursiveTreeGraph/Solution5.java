@@ -1,7 +1,16 @@
 package org.example.RecursiveTreeGraph;
 
+
+//root 부터 왼쪽으로 쭉쭉쭉 가다가 막히면 뒤로 백하기
+//root 로 돌아오면 끝내기
+//노드모양
+//------------
+//|   data   |
+//|----------|
+//| lt | rt  |
+//------------
 class Node {
-    int data;
+    int data; //1 2 3 4 5 6 7
     Node lt, rt; //Node 객체의 주소를 저장하는 것
     public Node(int val) {
         data = val;
@@ -23,14 +32,15 @@ public class Solution5 {
     }
     public static void main(String[] args) {
         Solution5 tree = new Solution5();
-        tree.root = new Node(1);
-        tree.root.lt = new Node(2);
-        tree.root.rt = new Node(3);
-        tree.root.lt.lt = new Node(4);
+        //트리구조 그리기
+        tree.root = new Node(1); //data = 1
+        tree.root.lt = new Node(2); //data = 1 의 lt 에 new Node(2) 의 주소가 담김
+        tree.root.rt = new Node(3); //data = 1 의 rt 에 new Node(3) 의 주소가 담긴
+        tree.root.lt.lt = new Node(4); //data = 4 / lt,rt = null (말단노드이기 때문에 null)
         tree.root.lt.rt = new Node(5);
         tree.root.rt.lt = new Node(6);
         tree.root.rt.rt = new Node(7);
-        tree.DFS(tree.root);
-
+        //트리 순회하기
+        tree.DFS(tree.root); //1번 노드 넘기기 (루트노드)
     }
 }
