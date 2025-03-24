@@ -6,11 +6,11 @@ public class Solution7 {
     public void BFS(Node root) {
         Queue<Node> Q = new LinkedList<>();
         Q.add(root);
-        int L = 0;
+        int L = 0; //root node
         while (!Q.isEmpty()) {
             int len = Q.size();
             System.out.print(L + " : ");
-            for (int i = 0; i < len; i++) {
+            for (int i = 0; i < len; i++) { //L 레벨의 원소들은 다 나와야 함.
                 Node cur = Q.poll();
                 System.out.print(cur.data + " ");
                 if (cur.lt != null) Q.add(cur.lt);
