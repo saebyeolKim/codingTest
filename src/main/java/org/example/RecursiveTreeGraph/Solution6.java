@@ -2,7 +2,7 @@ package org.example.RecursiveTreeGraph;
 
 public class Solution6 {
     static int n; //집합 원소의 개수
-    static int[] ch; //check 배열 부분집합으로 사용한다, 안한다. static method 가 접근해야되기 때문에 static
+    static int[] ch; //check 배열 부분집합으로 사용한다, 안한다. static method 가 접근해야되기 때문에  
     // ch [1, 1, 1] 0번 인덱스는 버린다.
     //|
     //|
