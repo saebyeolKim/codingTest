@@ -32,10 +32,18 @@ public class Solution9 {
         tree.root.rt = new Node(3);
         tree.root.lt.lt = new Node(4);
         tree.root.lt.rt = new Node(5);
-        tree.root.rt.lt = new Node(6);
-        tree.root.rt.rt = new Node(7);
-        tree.root.rt.rt.lt = new Node(8);
-        tree.root.rt.rt.rt = new Node(9);
+//        tree.root.rt.lt = new Node(6);
+//        tree.root.rt.rt = new Node(7);
+//        tree.root.rt.rt.lt = new Node(8);
+//        tree.root.rt.rt.rt = new Node(9);
+        System.out.println(tree.reviewDFS(0, tree.root));
         System.out.println(tree.BFS(tree.root));
+    }
+
+    //최단거리는 BFS (Queue 사용) 로 풀어야 함
+    //하지만 이번엔 DFS 활용
+    public int reviewDFS(int L, Node root) {
+        if (root.lt == null && root.rt == null) return L;
+        else return Math.min(reviewDFS(L + 1, root.lt), reviewDFS(L + 1, root.rt)); //자식이 하나만 있을 때는 오류가 나서, BFS 로 해야됨
     }
 }
