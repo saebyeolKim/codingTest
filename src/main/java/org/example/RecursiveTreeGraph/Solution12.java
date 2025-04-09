@@ -35,4 +35,19 @@ public class Solution12 {
         System.out.println(answer);
 
     }
+
+    //경로할 때 한 번 방문한 곳은 다시 방문 하면 안된다. 1 -> 2 -> 1 (X)
+    //D(1) 은 모든 정점으로 뻗으며, 갈 수 있다면 다시 DFS 를 돌리고, 체크를 한다.
+    public void reviewDFS(int v) {
+        if (n == v) answer++;
+        else {
+            for (int i = 1; i <= n; i++) {
+                if (graph[v][i] == 1) {
+                    ch[i] = 1;
+                    reviewDFS(i);
+                    ch[i] = 0; //중요! 백트래킹하면서 체크배열에 있는 값 풀어주기
+                }
+            }
+        }
+    }
 }
