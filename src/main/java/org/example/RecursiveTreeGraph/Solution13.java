@@ -37,8 +37,21 @@ public class Solution13 {
             graph.get(a).add(b);
         }
         ch[1] = 1; //출발점 체크
-        T.DFS(1); //출발
+        T.reviewDFS(1); //출발
         System.out.println(answer);
 
+    }
+
+    public void reviewDFS(int v) {
+        if (v == n) answer++;
+        else {
+            for (int nv : graph.get(v)) {
+                if (ch[nv] == 0) {
+                    ch[nv] = 1;
+                    reviewDFS(nv);
+                    ch[nv] = 0;
+                }
+            }
+        }
     }
 }
