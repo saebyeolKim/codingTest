@@ -62,4 +62,21 @@ public class Solution14 {
             System.out.println(i + " : " + dis[i]);
         }
     }
+
+    public void reviewBFS(int v) {
+        Queue<Integer> queue = new LinkedList<>();
+        ch[v] = 1;
+        dis[v] = 0;
+        queue.add(v);
+        while (!queue.isEmpty()) {
+            int cv = queue.poll();
+            for (int nv : graph.get(cv)) {
+                if (ch[nv] == 0) {
+                    ch[nv] = 1;
+                    queue.add(nv);
+                    dis[nv] = dis[cv] + 1;
+                }
+            }
+        }
+    }
 }
