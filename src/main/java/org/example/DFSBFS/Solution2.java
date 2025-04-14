@@ -24,8 +24,18 @@ public class Solution2 {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        s.DFS(0, 0, arr); //재귀
+        s.reviewDFS(0, 0, arr); //재귀
         System.out.println(answer);
+    }
+
+    public void reviewDFS(int L, int sum, int[] arr) {
+        if (sum > c) return;
+        if (L == n) {
+            answer = Math.max(sum, answer);
+        } else {
+            reviewDFS(L + 1, sum + arr[L], arr);
+            reviewDFS(L + 1, sum, arr);
+        }
     }
 }
 
