@@ -10,7 +10,6 @@ public class Solution7 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int r = sc.nextInt();
-        s.DFS(n , r);
         System.out.println(s.DFS(n , r));
     }
 
